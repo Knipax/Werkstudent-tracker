@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@400;500;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #0f0f0f;
+  --surface: #181818;
+  --surface2: #222222;
+  --border: #2e2e2e;
+  --accent: #d4f75a;
+  --accent2: #5af7c8;
+  --text: #f0f0f0;
+  --muted: #888;
+  --danger: #f7605a;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Syne', sans-serif;
+  min-height: 100vh;
+}
+
+.mono { font-family: 'DM Mono', monospace; }
+
+input, select, textarea {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 6px;
+  padding: 0.55rem 0.75rem;
+  font-family: 'Syne', sans-serif;
+  font-size: 0.875rem;
+  width: 100%;
+  transition: border-color 0.15s;
+  outline: none;
+}
+input:focus, select:focus, textarea:focus {
+  border-color: var(--accent);
+}
+select option { background: var(--surface2); }
+
+button {
+  cursor: pointer;
+  font-family: 'Syne', sans-serif;
+  font-size: 0.875rem;
+  border-radius: 6px;
+  transition: all 0.15s;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #0f0f0f;
+  border: none;
+  padding: 0.6rem 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+.btn-primary:hover { filter: brightness(1.08); }
+
+.btn-ghost {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  padding: 0.5rem 1rem;
+}
+.btn-ghost:hover { border-color: var(--text); color: var(--text); }
+
+.badge {
+  display: inline-block;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.7rem;
+  padding: 3px 10px;
+  border-radius: 20px;
+  letter-spacing: 0.04em;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.badge-applied   { background: #1a2a1a; color: #7dea7d; border: 1px solid #2a4a2a; }
+.badge-interview { background: #2a2210; color: var(--accent); border: 1px solid #443510; }
+.badge-offer     { background: #102a22; color: var(--accent2); border: 1px solid #1a4a38; }
+.badge-rejected  { background: #2a1010; color: var(--danger); border: 1px solid #4a1a1a; }
+.badge-withdrawn { background: #1e1e1e; color: var(--muted); border: 1px solid var(--border); }
